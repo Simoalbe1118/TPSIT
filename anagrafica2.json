@@ -1,0 +1,27 @@
+[
+    {
+      "nome": "Mario",
+      "cognome": "Rossi",
+      "indirizzo": "Via Roma, 10",
+      "città": "Milano",
+      "età": 35,
+      "telefono": {
+        "casa": "02-123456",
+        "ufficio": "02-654321",
+        "mobile": "333-1234567"
+      }
+    },
+    {
+      "nome": "Giulia",
+      "cognome": "Bianchi",
+      "indirizzo": "Corso Venezia, 15",
+      "città": "Roma",
+      "età": 29,
+      "telefono": {
+        "casa": "06-789012",
+        "ufficio": "06-345678",
+        "mobile": "333-7654321"
+      }
+    }
+  ]
+  
