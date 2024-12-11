@@ -1,0 +1,39 @@
+<html>
+<head>
+  <title>Anagrafica</title>
+</head>
+<body>
+  <h1>Anagrafica</h1>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Cognome</th>
+      </tr>
+    </thead>
+    <tbody id="dati">
+    </tbody>
+  </table>
+
+  <script>
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", "anagrafica.json", true);
+    xhr.onload = function () {
+      if (xhr.status === 200) {
+        const dati = JSON.parse(xhr.responseText);
+        const tbody = document.getElementById("dati");
+        dati.forEach(persona => {
+          const riga = `<tr>
+            <td>${persona.id}</td>
+            <td>${persona.nome}</td>
+            <td>${persona.cognome}</td>
+          </tr>`;
+          tbody.innerHTML += riga;
+        });
+      }
+    };
+    xhr.send();
+  </script>
+</body>
+</html>
