@@ -1,0 +1,42 @@
+<html>
+<head>
+  <title>Anagrafica</title>
+</head>
+<body>
+  <h1>Anagrafica</h1>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Cognome</th>
+        <th>Indirizzo</th>
+        <th>Città</th>
+        <th>Età</th>
+        <th>Telefono Casa</th>
+        <th>Telefono Ufficio</th>
+        <th>Telefono Mobile</th>
+      </tr>
+    </thead>
+    <tbody id="dati"></tbody>
+  </table>
+
+  <script>
+ <p id="testo"></p>
+var filehttp = new XMLHttpRequest();
+filehttp.onreadystatechange = function() {
+ if (this.readyState == 4 && this.status == 200) {
+ myFunction(this);
+ }
+};
+filehttp.open("GET", "nomi.xml", true);
+filehttp.send();
+function myFunction(file) {
+ var xmlDoc;
+ xmlDoc = file.responseText;
+ document.getElementById("testo").innerHTML = xmlDoc;
+}
+
+
+  </script>
+</body>
+</html>
