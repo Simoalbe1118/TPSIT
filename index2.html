@@ -1,0 +1,45 @@
+<html>
+<head>
+  <title>Anagrafica</title>
+</head>
+<body>
+  <h1>Anagrafica</h1>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Cognome</th>
+        <th>Indirizzo</th>
+        <th>Città</th>
+        <th>Età</th>
+        <th>Telefono Casa</th>
+        <th>Telefono Ufficio</th>
+        <th>Telefono Mobile</th>
+      </tr>
+    </thead>
+    <tbody id="dati"></tbody>
+  </table>
+
+  <script>
+    fetch("anagrafica2.json")
+      .then(response => response.json())
+      .then(data => {
+        let rows = "";
+        data.forEach(person => {
+          rows += `
+            <tr>
+              <td>${person.nome}</td>
+              <td>${person.cognome}</td>
+              <td>${person.indirizzo}</td>
+              <td>${person.città}</td>
+              <td>${person.età}</td>
+              <td>${person.telefono.casa}</td>
+              <td>${person.telefono.ufficio}</td>
+              <td>${person.telefono.mobile}</td>
+            </tr>`;
+        });
+        document.getElementById("dati").innerHTML = rows;
+      });
+  </script>
+</body>
+</html>
