@@ -28,12 +28,14 @@ filehttp.onreadystatechange = function() {
  myFunction(this);
  }
 };
-filehttp.open("GET", "nomi.xml", true);
+filehttp.open("GET", "es.xml", true);
 filehttp.send();
 function myFunction(file) {
  var xmlDoc;
  xmlDoc = file.responseText;
  document.getElementById("testo").innerHTML = xmlDoc;
+  console.log(xmlDoc)
+  
 }
 
 
